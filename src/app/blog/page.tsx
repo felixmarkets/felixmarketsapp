@@ -43,7 +43,7 @@ export default async function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="navy-gradient text-white py-20">
+      <section className="bg-[#111] text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold">

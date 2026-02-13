@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Smartphone, Globe, Zap, ArrowRight, CheckCircle, Lock, Award } from "lucide-react";
+import { Shield, Lock, Fingerprint, Eye, Server, BadgeCheck } from "lucide-react";
 
 export const runtime = "edge";
 
@@ -20,152 +17,114 @@ export const metadata: Metadata = {
 export default function HakkimizdaPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="navy-gradient text-white py-20">
+      {/* Hero — sol hizalı, koyu arka plan */}
+      <section className="bg-[#111] text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold">
-              <span className="text-gold">Felix Markets App</span> Hakkında
+          <div className="max-w-3xl">
+            <span className="text-gold text-sm font-semibold tracking-wider uppercase">Hakkımızda</span>
+            <h1 className="text-3xl md:text-5xl font-bold mt-3 mb-5">
+              Mobil Trading&apos;in <span className="text-gold">Yeni Nesil</span> Uygulaması
             </h1>
-            <p className="text-lg text-gray-300">
-              Profesyonel mobil trading deneyimi — her yerden, her an güvenle işlem yapın.
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Felix Markets App, yatırımcılara iOS ve Windows üzerinden profesyonel
+              trading deneyimi sunan MetaTrader 5 tabanlı bir mobil uygulamadır.
             </p>
           </div>
         </div>
       </section>
 
-      {/* About Content */}
-      <section className="py-20">
+      {/* İki sütunlu hikaye — diğer sitelerde yok */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <h2 className="text-3xl font-bold mb-6">
-                Mobil Trading&apos;in Yeni Adresi
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Felix Markets App, iOS ve Windows platformları için özel olarak geliştirilmiş
-                profesyonel bir mobil trading uygulamasıdır. MetaTrader 5 entegrasyonu sayesinde
-                gelişmiş grafik araçları, teknik analiz göstergeleri ve anlık emir gerçekleştirme
-                özelliklerini avucunuzun içine taşıyoruz.
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Neden Bu Uygulama?</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Geleneksel masaüstü trading platformları mobil dünyaya uyum sağlamakta
+                zorlanıyordu. Felix Markets App, bu boşluğu doldurmak için sıfırdan
+                tasarlandı — mobil öncelikli, hızlı ve güvenli.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Uygulamamız, banka düzeyinde şifreleme teknolojisi ve iki faktörlü kimlik
-                doğrulama (2FA) ile güvenli bir işlem ortamı sunar. Biyometrik giriş desteği
-                sayesinde parmak izi veya yüz tanıma ile hızlı ve güvenli erişim sağlayabilirsiniz.
+                MetaTrader 5&apos;in tüm gücünü cebinize taşıyoruz: gelişmiş grafikler,
+                50+ teknik gösterge, anlık emir gerçekleştirme ve 1000&apos;den fazla
+                enstrümana erişim. Tüm bunlar 20ms altı gecikme süresiyle.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Kim İçin?</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                İster yeni başlayan ister deneyimli yatırımcı olun — Felix Markets App
+                her seviyeye uygun araçlar sunar. Demo hesapla risksiz pratik yapabilir,
+                hazır olduğunuzda gerçek hesaba geçebilirsiniz.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                1000&apos;den fazla işlem enstrümanına mobil erişim, 20ms&apos;den düşük gecikme
-                süresi ile anlık emir gerçekleştirme ve 7/24 uygulama içi canlı destek ile
-                profesyonel trading deneyimini cebinizde yaşayın. Felix Markets App ile
-                global piyasalara her yerden bağlanın.
+                Forex, hisse senedi, emtia, endeks ve kripto para piyasalarında tek
+                uygulama üzerinden işlem yapın. Masaüstü ve mobil arasında sorunsuz
+                senkronizasyon ile her yerden trading yapın.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Security Section */}
-      <section className="py-20 navy-gradient text-white">
+      {/* Rakamlar — yatay bar, diğer sitelerde yok */}
+      <section className="bg-[#111] text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl font-bold">
-              Fonlarınızın Güvenliği Birinci Önceliğimiz
-            </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Felix Markets&apos;te yatırımlarınızın güvenliği en yüksek önceliğimizdir.
-              MWALI lisansları ve WikiFX onayı ile fonlarınızın gelişmiş güvenlik
-              protokolleriyle korunmasını sağlıyoruz.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              {[
-                { icon: Lock, text: "Banka Düzeyinde Şifreleme" },
-                { icon: Shield, text: "2FA Güvenlik Sistemi" },
-                { icon: Award, text: "ASIC Düzenlemeli" },
-                { icon: Lock, text: "Biyometrik Giriş Desteği" },
-                { icon: Shield, text: "7/24 Güvenlik İzleme" },
-                { icon: CheckCircle, text: "Apple Güvenlik Standartları" },
-              ].map((item) => (
-                <div key={item.text} className="flex items-center gap-3 text-left">
-                  <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                    <item.icon className="h-5 w-5 text-gold" />
-                  </div>
-                  <span className="text-sm">{item.text}</span>
-                </div>
-              ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-4xl mx-auto">
+            <div>
+              <div className="text-3xl font-black text-gold">1000+</div>
+              <div className="text-xs text-gray-400 mt-1">Enstrüman</div>
+            </div>
+            <div>
+              <div className="text-3xl font-black text-gold">&lt;20ms</div>
+              <div className="text-xs text-gray-400 mt-1">Gecikme Süresi</div>
+            </div>
+            <div>
+              <div className="text-3xl font-black text-gold">7/24</div>
+              <div className="text-xs text-gray-400 mt-1">Uygulama Desteği</div>
+            </div>
+            <div>
+              <div className="text-3xl font-black text-gold">3</div>
+              <div className="text-xs text-gray-400 mt-1">Platform (iOS, Win, Mac)</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20">
+      {/* Güvenlik — 6 kart grid, diğer sitelerden farklı layout */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Neden Felix Markets?
+          <h2 className="text-2xl font-bold text-center mb-3">
+            Güvenlik <span className="text-gold">Altyapımız</span>
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-10 text-sm">
+            Paranız ve kişisel verileriniz çok katmanlı güvenlik sistemiyle korunur.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {[
-              {
-                icon: Smartphone,
-                title: "Mobil Optimizasyon",
-                desc: "Tüm cihazlarda mükemmel performans ve kullanıcı deneyimi. Retina ekran desteği.",
-              },
-              {
-                icon: Zap,
-                title: "Anlık Emir Gerçekleştirme",
-                desc: "20ms altı gecikme süresi ile piyasa fırsatlarını anında değerlendirin.",
-              },
-              {
-                icon: Globe,
-                title: "1000+ Enstrüman",
-                desc: "Forex, hisse, emtia, endeks ve kripto para dahil geniş yelpazede mobil işlem.",
-              },
-              {
-                icon: Shield,
-                title: "Güvenli Altyapı",
-                desc: "Banka düzeyinde şifreleme, 2FA ve biyometrik giriş ile maksimum güvenlik.",
-              },
+              { icon: Lock, label: "256-bit SSL Şifreleme" },
+              { icon: Shield, label: "İki Faktörlü Doğrulama" },
+              { icon: Fingerprint, label: "Biyometrik Giriş" },
+              { icon: Eye, label: "7/24 Güvenlik İzleme" },
+              { icon: Server, label: "Ayrıştırılmış Hesaplar" },
+              { icon: BadgeCheck, label: "ASIC Düzenlemeli" },
             ].map((item) => (
-              <Card key={item.title} className="text-center">
-                <CardContent className="p-6 space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto">
-                    <item.icon className="h-7 w-7 text-gold" />
-                  </div>
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.desc}</p>
-                </CardContent>
-              </Card>
+              <div key={item.label} className="flex items-center gap-3 bg-card border rounded-lg p-4 hover:border-gold/30 transition-colors">
+                <item.icon className="h-5 w-5 text-gold shrink-0" />
+                <span className="text-sm font-medium">{item.label}</span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Risk Warning + CTA */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-3xl font-bold mb-4">
-            Uygulamayı İndirin ve Başlayın
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            Felix Markets mobil uygulamasını indirin ve profesyonel trading deneyimini
-            cebinizde yaşayın.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button variant="gold" size="lg" asChild>
-              <Link href="/hizmetler">
-                Özellikleri İncele <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link href="/iletisim">
-                İletişime Geçin
-              </Link>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            <strong>Risk Uyarısı:</strong> Türev ürün ticareti önemli riskler taşır. Tüm yatırımcılar
-            için uygun değildir. Geçmiş performans gelecekteki performansın göstergesi değildir.
-            İşlem kararlarınızı vermeden önce yasal belgeleri okuyun ve riskleri tam olarak anladığınızdan emin olun.
+      {/* Risk uyarısı — minimal, alt kısımda */}
+      <section className="py-8 border-t">
+        <div className="container mx-auto px-4">
+          <p className="text-[11px] text-muted-foreground text-center max-w-3xl mx-auto leading-relaxed">
+            <strong>Risk Uyarısı:</strong> Türev ürünlerle işlem yapmak önemli riskler taşır ve tüm yatırımcılar için uygun olmayabilir.
+            Geçmiş performans gelecekteki sonuçların göstergesi değildir. Felix Markets, Comoros&apos;da kayıtlı (HT00324040) ve
+            ASIC tarafından düzenlenmiştir (ACN 648 763 955).
           </p>
         </div>
       </section>

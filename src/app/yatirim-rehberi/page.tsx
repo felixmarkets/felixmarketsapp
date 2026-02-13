@@ -74,7 +74,7 @@ export default function YatirimRehberiPage() {
   return (
     <>
       {/* Hero */}
-      <section className="navy-gradient text-white py-20">
+      <section className="bg-[#111] text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 text-sm text-gold">
@@ -147,7 +147,7 @@ export default function YatirimRehberiPage() {
       </section>
 
       {/* CTA */}
-      <section className="navy-gradient text-white py-20">
+      <section className="bg-[#111] text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Hemen İndirin ve Başlayın

@@ -1,136 +1,116 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import Link from "next/link";
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Clock, Headphones } from "lucide-react";
 
 export const runtime = "edge";
 
 export const metadata: Metadata = {
-  title: "İletişim | Felix Markets App Destek",
+  title: "Destek | Felix Markets App Yardım Merkezi",
   description:
-    "Felix Markets App ile iletişime geçin. Uygulama desteği, hesap sorunları ve teknik yardım için support@felixmarkets.com adresinden veya +61 272 418 913 numarasından ulaşın.",
+    "Felix Markets App teknik destek ve yardım merkezi. Uygulama sorunları, hesap işlemleri ve kurulum desteği için 7/24 ekibimize ulaşın.",
   alternates: { canonical: "https://felixmarketsapp.com/iletisim" },
   openGraph: {
-    title: "Felix Markets App İletişim | 7/24 Uygulama Desteği",
-    description: "Uygulama desteği ve teknik yardım için 7/24 destek hattımızdan veya e-posta ile bize ulaşın.",
+    title: "Felix Markets App Destek Merkezi",
+    description: "Uygulama teknik desteği ve yardım için 7/24 ekibimize ulaşın.",
   },
 };
 
 export default function IletisimPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="navy-gradient text-white py-20">
+      {/* Hero — farklı yapı: sol hizalı, ikon grid */}
+      <section className="bg-[#111] text-white py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold">
-              <span className="text-gold">İletişim</span>
+          <div className="max-w-4xl">
+            <div className="flex items-center gap-2 text-gold text-sm font-semibold mb-4">
+              <Headphones className="h-4 w-4" />
+              7/24 Uygulama Desteği
+            </div>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">
+              Yardım <span className="text-gold">Merkezi</span>
             </h1>
-            <p className="text-lg text-gray-300">
-              Sorularınız ve önerileriniz için bizimle iletişime geçin.
+            <p className="text-gray-400 max-w-xl">
+              Felix Markets App ile ilgili tüm sorularınız için destek ekibimiz
+              her zaman yanınızda. Uygulama kurulumu, hesap işlemleri veya teknik
+              sorunlar için bize ulaşın.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20">
+      {/* Contact channels — 3 kart yan yana (diğer sitelerden farklı layout) */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {/* Contact Form */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Bize Yazın</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Ad Soyad</Label>
-                    <Input id="name" placeholder="Adınız ve soyadınız" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">E-posta</Label>
-                    <Input id="email" type="email" placeholder="ornek@email.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Konu</Label>
-                    <Input id="subject" placeholder="Mesajınızın konusu" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Mesaj</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Mesajınızı buraya yazın..."
-                      rows={5}
-                    />
-                  </div>
-                  <Button variant="gold" size="lg" className="w-full">
-                    Mesaj Gönder
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="bg-card border rounded-xl p-6 text-center space-y-3 hover:border-gold/40 transition-colors">
+              <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto">
+                <Mail className="h-5 w-5 text-gold" />
+              </div>
+              <h3 className="font-semibold">E-posta Desteği</h3>
+              <p className="text-sm text-muted-foreground">Detaylı sorularınız için</p>
+              <a href="mailto:support@felixmarkets.com" className="text-gold text-sm font-medium hover:underline block">
+                support@felixmarkets.com
+              </a>
+            </div>
 
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold mb-6">İletişim Bilgileri</h2>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                      <Mail className="h-5 w-5 text-gold" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">E-posta</h3>
-                      <p className="text-muted-foreground">support@felixmarkets.com</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                      <Phone className="h-5 w-5 text-gold" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">Telefon</h3>
-                      <p className="text-muted-foreground">+61 272 418 913</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                      <MapPin className="h-5 w-5 text-gold" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">Adres</h3>
-                      <p className="text-muted-foreground">Fomboni – Mwali Adası – Comoros</p>
-                    </div>
+            <div className="bg-card border rounded-xl p-6 text-center space-y-3 hover:border-gold/40 transition-colors">
+              <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto">
+                <Phone className="h-5 w-5 text-gold" />
+              </div>
+              <h3 className="font-semibold">Telefon</h3>
+              <p className="text-sm text-muted-foreground">Acil destek hattı</p>
+              <a href="tel:+61272418913" className="text-gold text-sm font-medium hover:underline block">
+                +61 272 418 913
+              </a>
+            </div>
+
+            <div className="bg-card border rounded-xl p-6 text-center space-y-3 hover:border-gold/40 transition-colors">
+              <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto">
+                <MapPin className="h-5 w-5 text-gold" />
+              </div>
+              <h3 className="font-semibold">Merkez Ofis</h3>
+              <p className="text-sm text-muted-foreground">Kayıtlı adres</p>
+              <span className="text-gold text-sm font-medium block">
+                Fomboni – Comoros
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ — diğer sitelerde yok */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-10">
+            Sık Sorulan <span className="text-gold">Sorular</span>
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              { q: "Uygulamayı nereden indirebilirim?", a: "iOS için App Store'dan 'Felix Markets' aratarak, Windows için hizmetler sayfamızdaki MetaTrader 5 indirme linkinden indirebilirsiniz." },
+              { q: "Hesap açmak için ne gerekiyor?", a: "Kimlik belgesi, e-posta adresi ve telefon numarası ile hızlıca hesap oluşturabilirsiniz. Minimum $100 depozito ile işlem yapmaya başlayabilirsiniz." },
+              { q: "Uygulama hangi cihazları destekliyor?", a: "iPhone, iPad, Windows PC ve Mac bilgisayarlar desteklenmektedir. MetaTrader 5 altyapısı kullanılmaktadır." },
+              { q: "Para yatırma ve çekme nasıl yapılır?", a: "Banka havalesi, kredi kartı ve diğer güvenli ödeme yöntemleri ile hesabınıza para yatırabilir veya çekebilirsiniz." },
+              { q: "Teknik bir sorun yaşıyorum, ne yapmalıyım?", a: "support@felixmarkets.com adresine ekran görüntüsü ile birlikte sorununuzu bildirin. Ekibimiz en kısa sürede size dönüş yapacaktır." },
+            ].map((item) => (
+              <div key={item.q} className="bg-card border rounded-lg p-5">
+                <div className="flex items-start gap-3">
+                  <MessageCircle className="h-5 w-5 text-gold mt-0.5 shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-1">{item.q}</h3>
+                    <p className="text-sm text-muted-foreground">{item.a}</p>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              {/* CTA Card */}
-              <Card className="bg-navy-light text-white border-gold/20">
-                <CardContent className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold">
-                    Felix Markets Hakkında
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    1000+ enstrüman, 0.01 pip spread, 1:400 kaldıraç ve
-                    MetaTrader 5 platformuyla global piyasalarda işlem yapın.
-                  </p>
-                  <div className="flex flex-col gap-3">
-                    <Button variant="gold" asChild>
-                      <Link href="/hizmetler">
-                        Hizmetleri İncele
-                        <ExternalLink className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+      {/* Destek saatleri — diğer sitelerde yok */}
+      <section className="py-12">
+        <div className="container mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+            <Clock className="h-4 w-4" />
+            <span>Destek ekibimiz 7 gün 24 saat hizmetinizdedir</span>
           </div>
         </div>
       </section>

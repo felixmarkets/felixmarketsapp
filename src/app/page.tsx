@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section — Centered with app focus */}
-      <section className="relative overflow-hidden navy-gradient text-white">
+      <section className="relative overflow-hidden bg-[#111] text-white">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
         <div className="container mx-auto px-4 py-24 md:py-36 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-6">
@@ -226,7 +226,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="navy-gradient text-white py-20">
+      <section className="bg-[#111] text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
