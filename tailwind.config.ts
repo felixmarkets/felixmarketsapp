@@ -40,14 +40,14 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         gold: {
-          DEFAULT: "#8B5CF6",
-          light: "#A78BFA",
-          dark: "#7C3AED",
+          DEFAULT: "#EC1C25",
+          light: "#F04850",
+          dark: "#C8151D",
         },
         navy: {
-          DEFAULT: "#0A0A1B",
-          light: "#1A1A2E",
-          dark: "#050510",
+          DEFAULT: "#111111",
+          light: "#1A1A1A",
+          dark: "#0A0A0A",
         },
       },
       borderRadius: {

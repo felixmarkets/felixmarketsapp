@@ -2,73 +2,116 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Smartphone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { Menu, X, Download } from "lucide-react";
 
-const navLinks = [
-  { href: "/", label: "Ana Sayfa" },
+const topLinks = [
   { href: "/hakkimizda", label: "Hakkımızda" },
   { href: "/hizmetler", label: "Özellikler" },
-  { href: "/yatirim-rehberi", label: "İndirme Rehberi" },
-  { href: "/blog", label: "Blog" },
-  { href: "/iletisim", label: "İletişim" },
+  { href: "/yatirim-rehberi", label: "Kurulum" },
+  { href: "/blog", label: "Haberler" },
+  { href: "/iletisim", label: "Destek" },
 ];
 
 export function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Smartphone className="h-7 w-7 text-gold" />
-          <span className="text-xl font-bold">
-            <span className="text-gold">Felix</span>{" "}
-            <span className="text-foreground">Markets App</span>
-          </span>
-        </Link>
-
-        <nav className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent/50"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <ThemeToggle />
-          <Button variant="gold" size="sm" asChild className="ml-2">
-            <Link href="/hizmetler">Uygulamayı İndir</Link>
-          </Button>
-        </nav>
-
-        <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
-          <Button variant="ghost" size="icon" onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+    <header className="sticky top-0 z-50 w-full bg-[#111] text-white">
+      {/* Top bar */}
+      <div className="border-b border-white/10">
+        <div className="container mx-auto flex h-10 items-center justify-between px-4 text-xs text-gray-400">
+          <span>support@felixmarkets.com &bull; +61 272 418 913</span>
+          <span className="hidden sm:inline">LEVANTE UD Resmi Partneri</span>
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden border-t bg-background">
-          <nav className="container mx-auto flex flex-col px-4 py-4 gap-1">
-            {navLinks.map((link) => (
+      {/* Main nav */}
+      <div className="container mx-auto flex h-14 items-center justify-between px-4">
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-md bg-gold flex items-center justify-center">
+            <span className="text-white font-black text-lg leading-none">F</span>
+          </div>
+          <div className="leading-tight">
+            <span className="text-sm font-bold tracking-wide">FELIX MARKETS</span>
+            <span className="block text-[10px] text-gold font-semibold tracking-widest uppercase">Mobile App</span>
+          </div>
+        </Link>
+
+        <nav className="hidden lg:flex items-center gap-6">
+          {topLinks.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="text-sm text-gray-300 hover:text-white transition-colors"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="hidden lg:flex items-center gap-3">
+          <a
+            href="https://apps.apple.com/tr/app/felix-markets/id6747508035?l=tr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 bg-gold hover:bg-gold-dark text-white text-sm font-semibold px-4 py-2 rounded transition-colors"
+          >
+            <Download className="h-4 w-4" />
+            İndir
+          </a>
+          <a
+            href="https://client.felixmarketsglobal.com/tr/auth/sign-in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-gray-300 hover:text-white border border-white/20 px-4 py-2 rounded transition-colors"
+          >
+            Giriş Yap
+          </a>
+        </div>
+
+        <button
+          className="lg:hidden p-2 text-gray-300 hover:text-white"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="lg:hidden border-t border-white/10 bg-[#111]">
+          <nav className="container mx-auto px-4 py-4 space-y-1">
+            {topLinks.map((l) => (
               <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent/50"
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded transition-colors"
               >
-                {link.label}
+                {l.label}
               </Link>
             ))}
-            <Button variant="gold" size="sm" className="mt-2" asChild>
-              <Link href="/hizmetler" onClick={() => setMobileOpen(false)}>Uygulamayı İndir</Link>
-            </Button>
+            <div className="flex gap-2 pt-3">
+              <a
+                href="https://apps.apple.com/tr/app/felix-markets/id6747508035?l=tr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-1.5 bg-gold text-white text-sm font-semibold px-4 py-2.5 rounded"
+                onClick={() => setOpen(false)}
+              >
+                <Download className="h-4 w-4" />
+                İndir
+              </a>
+              <a
+                href="https://client.felixmarketsglobal.com/tr/auth/sign-in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 text-center text-sm text-gray-300 border border-white/20 px-4 py-2.5 rounded"
+                onClick={() => setOpen(false)}
+              >
+                Giriş Yap
+              </a>
+            </div>
           </nav>
         </div>
       )}
