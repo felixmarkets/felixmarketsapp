@@ -60,7 +60,7 @@ export function Header() {
             İndir
           </a>
           <a
-            href="https://client.felixmarketsglobal.com/tr/auth/sign-in"
+            href="https://felixmarketsglobal.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-gray-300 hover:text-white border border-white/20 px-4 py-2 rounded transition-colors"
@@ -103,7 +103,7 @@ export function Header() {
                 İndir
               </a>
               <a
-                href="https://client.felixmarketsglobal.com/tr/auth/sign-in"
+                href="https://felixmarketsglobal.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 text-center text-sm text-gray-300 border border-white/20 px-4 py-2.5 rounded"

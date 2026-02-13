@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Felix Markets App",
   },
   description:
-    "Felix Markets mobil uygulamasını indirin. iOS ve Android için profesyonel trading deneyimi. MetaTrader 5 entegrasyonu, anlık bildirimler ve güvenli işlem altyapısı.",
+    "Felix Markets mobil uygulamasını indirin. iOS ve Windows için profesyonel trading deneyimi. MetaTrader 5 entegrasyonu ve güvenli altyapı.",
   keywords: [
     "felix markets app",
     "mobil trading",
@@ -35,7 +35,22 @@ export const metadata: Metadata = {
     siteName: "Felix Markets App",
     title: "Felix Markets App | Mobil Trading Uygulaması",
     description:
-      "iOS ve Android için profesyonel mobil trading uygulaması. MetaTrader 5 entegrasyonu, anlık bildirimler ve 1000+ enstrüman.",
+      "iOS ve Windows için profesyonel mobil trading uygulaması. MetaTrader 5 entegrasyonu ve 1000+ enstrüman.",
+    images: [
+      {
+        url: "https://felixmarketsapp.com/icon-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Felix Markets App Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Felix Markets App | Mobil Trading Uygulaması",
+    description:
+      "iOS ve Windows için profesyonel mobil trading uygulaması. MetaTrader 5 entegrasyonu ve 1000+ enstrüman.",
+    images: ["https://felixmarketsapp.com/icon-512x512.png"],
   },
   robots: {
     index: true,

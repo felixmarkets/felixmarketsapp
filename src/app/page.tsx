@@ -13,8 +13,31 @@ import {
   Apple,
   Fingerprint,
 } from "lucide-react";
+import Link from "next/link";
 
 export const runtime = "edge";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "Felix Markets App",
+  operatingSystem: "iOS, Windows, macOS",
+  applicationCategory: "FinanceApplication",
+  description:
+    "Felix Markets mobil uygulaması. iOS ve Windows için profesyonel trading deneyimi. MetaTrader 5 entegrasyonu ve güvenli altyapı.",
+  url: "https://felixmarketsapp.com",
+  downloadUrl: "https://apps.apple.com/tr/app/felix-markets/id6747508035?l=tr",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  author: {
+    "@type": "Organization",
+    name: "Felix Markets",
+    url: "https://felixmarketsapp.com",
+  },
+};
 
 const appFeatures = [
   {
@@ -58,6 +81,10 @@ const appFeatures = [
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section — Centered with app focus */}
       <section className="relative overflow-hidden bg-[#111] text-white">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
@@ -264,17 +291,13 @@ export default function Home() {
                 </a>
               </Button>
             </div>
-            <p className="text-gray-500 text-sm pt-2">
-              <a
-                href="https://felixmarketglobal.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gold transition-colors underline"
-              >
-                felixmarketglobal.com
-              </a>
-              {" "}üzerinden de platforma erişebilirsiniz.
-            </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-4 text-xs text-gray-500">
+              <Link href="/hakkimizda" className="hover:text-gold transition-colors">Hakkımızda</Link>
+              <Link href="/hizmetler" className="hover:text-gold transition-colors">Özellikler</Link>
+              <Link href="/yatirim-rehberi" className="hover:text-gold transition-colors">Kurulum Rehberi</Link>
+              <Link href="/blog" className="hover:text-gold transition-colors">Haberler</Link>
+              <Link href="/iletisim" className="hover:text-gold transition-colors">Destek</Link>
+            </div>
           </div>
         </div>
       </section>
