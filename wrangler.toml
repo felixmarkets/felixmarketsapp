@@ -6,7 +6,7 @@ pages_build_output_dir = ".vercel/output/static"
 [[d1_databases]]
 binding = "DB"
 database_name = "felixmarketsapp-db"
-database_id = "PLACEHOLDER"
+database_id = "a4f12d45-b4df-4b55-92bb-ee48fd2ae255"
 migrations_dir = "drizzle/migrations"
 
 # [[r2_buckets]]

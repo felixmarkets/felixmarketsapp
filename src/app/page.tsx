@@ -5,7 +5,6 @@ import {
   Shield,
   Zap,
   BarChart3,
-  ArrowRight,
   Download,
   Globe,
   Headphones,
@@ -14,7 +13,6 @@ import {
   Apple,
   Fingerprint,
 } from "lucide-react";
-import Link from "next/link";
 
 export const runtime = "edge";
 
